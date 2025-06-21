@@ -17,7 +17,7 @@ links.forEach(link => {
 });
 
 //POP-UP
-function showPopup(event) {
+/*function showPopup(event) {
   event.preventDefault();
 
   const form = event.target;
@@ -36,7 +36,34 @@ function showPopup(event) {
     form.reset();
   })
   .catch((error) => alert("Erro ao enviar formulário: " + error));
+}*/
+
+function showPopup(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const data = new FormData(form);
+
+  // ✅ Necessário pro Netlify reconhecer o formulário
+  data.append("form-name", form.getAttribute("name"));
+
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(data).toString()
+  })
+  .then(() => {
+    document.getElementById("popup").style.display = "flex";
+    form.reset();
+  })
+  .catch((error) => alert("Erro ao enviar formulário: " + error));
 }
+
+// ✅ Essa função precisa estar presente pra o botão fechar funcionar
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
 
 
 
