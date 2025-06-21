@@ -17,12 +17,14 @@ links.forEach(link => {
 });
 
 //POP-UP
-
 function showPopup(event) {
   event.preventDefault();
 
   const form = event.target;
   const data = new FormData(form);
+
+  // ✅ Adiciona o form-name manualmente
+  data.append("form-name", form.getAttribute("name"));
 
   fetch("/", {
     method: "POST",
@@ -36,9 +38,6 @@ function showPopup(event) {
   .catch((error) => alert("Erro ao enviar formulário: " + error));
 }
 
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
-}
 
 
 //FAQ
