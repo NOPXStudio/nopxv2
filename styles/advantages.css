@@ -1,0 +1,47 @@
+#advantages .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+#advantages .card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+#advantages .card {
+  background-image: url(/assets/images/blur.webp);
+  border: 1px solid var(--color-secondary-dark);
+  height: 100%;
+  max-width: 400px;
+  text-align: left;
+}
+
+#advantages .card-container .card p {
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+#advantages .icon {
+    margin: 25px 20px 10px;
+}
+
+@media (min-width: 1024px) {
+    #advantages .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+}
+
+@media (min-width: 1441px) {
+    #advantages .card-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+}

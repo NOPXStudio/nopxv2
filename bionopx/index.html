@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Cartão de Visita</title>
+
+    <link rel="icon" type="image/png" href="../assets/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
+    <link rel="shortcut icon" href="../assets/icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="NOPX" />
+    <link rel="manifest" href="../assets/icons/site.webmanifest" />
+
+    <meta property="og:title" content="Criação de cartão de visita online">
+    <meta property="og:description" content="Criação de sites, cartão de visita online, aplicativos e landing pages">
+    <meta property="og:image" content="https://nopx.com.br/assets/icons/logo-social.png">
+    <meta property="og:url" content="https://nopx.com.br/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones sociais (biblioteca de fontes) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link para a folha de estilo CSS externa -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <div id="editor-panel">
+            <div class="text-container">
+                <div class="headline">
+                <img src="../assets/icons/favicon-96x96.png" width="32px" height="32px" alt="logo nopx">
+                <h1>Bio<b>NOPX</b></h1>
+            </div>
+            <h2>Seu cartão de visita online!</h2>
+            </div>
+
+            <div class="space-y-3">
+                <label for="profile-pic-upload">Foto de Perfil</label>
+                <input type="file" id="profile-pic-upload" accept="image/*">
+                <p>Faça upload de uma imagem para sua foto de perfil.</p>
+            </div>
+
+            <div class="space-y-3">
+                <label for="mini-bio">Mini Bio</label>
+                <textarea id="mini-bio" placeholder="Escreva uma breve descrição sobre você..." rows="4" maxlength="200"></textarea>
+                <p><span id="bio-char-count">0</span>/200 caracteres</p>
+            </div>
+
+            <div class="space-y-4">
+                <h2>Botões de Links</h2>
+                <div id="links-container" class="space-y-3">
+                    <!-- Links serão adicionados aqui via JS -->
+                </div>
+                <button id="add-link-btn">Adicionar Link</button>
+            </div>
+
+            <!-- Seção de Ícones de Redes Sociais -->
+            <div class="space-y-4">
+                <h2>Ícones de Redes Sociais</h2>
+                <div class="icon-style-options">
+                    <span>Estilo do Ícone:</span>
+                    <label>
+                        <input type="radio" name="icon-style" value="circle" checked>
+                        <span>Circular</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="icon-style" value="square">
+                        <span>Quadrado</span>
+                    </label>
+                </div>
+                <div id="social-icons-container" class="space-y-3">
+                    <!-- Ícones serão adicionados aqui via JS -->
+                </div>
+                <button id="add-social-btn">Adicionar Ícone</button>
+            </div>
+
+            <!-- Paleta de Cores Personalizadas -->
+            <div class="space-y-4 pb-6">
+                <h2>Paleta de Cores</h2>
+                <div class="color-picker-grid">
+                    <div>
+                        <label for="bg-color-picker">Fundo do Cartão:</label>
+                        <input type="color" id="bg-color-picker" value="#ffffff">
+                    </div>
+                    <div>
+                        <label for="btn-bg-color-picker">Fundo do Botão:</label>
+                        <input type="color" id="btn-bg-color-picker" value="#373838">
+                    </div>
+                    <div>
+                        <label for="btn-text-color-picker">Cor do Texto do Botão:</label>
+                        <input type="color" id="btn-text-color-picker" value="#ffffff">
+                    </div>
+                    <div>
+                        <label for="icon-bg-color-picker">Fundo do Ícone:</label>
+                        <input type="color" id="icon-bg-color-picker" value="#ED145B">
+                    </div>
+                    <div>
+                        <label for="icon-color-picker">Cor do Ícone:</label>
+                        <input type="color" id="icon-color-picker" value="#ffffff">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Lado Direito: Preview (📱) -->
+
+        <div id="preview-panel">
+            <div class="whats-desktop">
+                <a href="https://wa.me/554891440739?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20NopX.">Peça o seu!</a>
+            </div>
+            <h1>Pré-visualização</h1>
+            <!-- O cartão de perfil é exibido diretamente -->
+            <div id="profile-card-preview">
+                <!-- Conteúdo do cartão de perfil será renderizado aqui -->
+                <img id="preview-profile-pic" src="https://placehold.co/100x100/A0A0A0/FFFFFF?text=Seu+Avatar" alt="Foto de Perfil">
+                <p id="preview-mini-bio">Esta é a sua mini bio. Ela aparecerá aqui no seu cartão de perfil. Você pode editá-la no painel esquerdo.</p>
+                <div id="preview-links-container">
+                    <!-- Links de exemplo - as cores serão definidas via variáveis CSS -->
+                    <a href="#" target="_blank">Exemplo de Link 1</a>
+                    <a href="#" target="_blank">Exemplo de Link 2</a>
+                </div>
+                <div id="preview-social-icons-container">
+                    <!-- Ícones sociais de exemplo - as cores serão definidas via variáveis CSS -->
+                    <a href="#" target="_blank" class="rounded-full">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" class="rounded-full">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="whats">
+                <a href="https://wa.me/554891440739?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20NopX.">Peça o seu!</a>
+            </div>
+        
+    </div>
+
+    <!-- Link para o arquivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>

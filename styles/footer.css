@@ -1,0 +1,93 @@
+footer {
+    margin-top: 5rem;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--color-white);
+  display: inline-block;
+  vertical-align: middle;
+  transition: color 0.3s;
+}
+
+.social-container {
+    padding-block: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-links {
+    padding: 1rem;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-links:hover, .social-links svg:hover  {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(58, 58, 58, 0.3);
+    color: var(--color-primary);
+}
+
+.copyright {
+    padding-top: 5rem;
+    text-align: center;
+    font-size: 0.5rem;
+    font-family: var(--font-family-primary);
+}
+
+.float-button {
+  position: fixed;
+  left: 3rem;
+  bottom: 3rem;
+  width: 5rem;
+  height: 5rem;
+  z-index: 1005;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  gap: 1rem;
+  padding-left: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.3s ease;
+  background-color: #25D366;
+  text-decoration: none;
+  border-radius: var(--spacing-xs);
+  box-shadow: var(--shadow);
+}
+
+.float-button .icon {
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  fill: currentColor;
+
+}
+
+.float-text {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: var(--color-white);
+}
+
+.float-button:hover {
+  width: 200px;
+}
+
+.float-button .icon:hover {
+    color: var(--color-white);
+}
+
+.float-button:hover .float-text {
+  opacity: 1;
+}
+

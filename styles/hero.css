@@ -1,0 +1,29 @@
+main {
+    background-image: url(/assets/images/background.webp);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    max-width: 600px;
+}
+
+#hero .container {
+    margin-block: 0;
+}
+
+.cta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1rem;
+    margin-top: 6rem;
+}
+
+
+

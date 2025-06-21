@@ -1,0 +1,45 @@
+#editor-panel {
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-y: auto; /* Permite rolagem vertical apenas aqui */
+    border-bottom: 1px solid var(--gray-200);
+}
+
+/* Lado Direito: Preview */
+#preview-panel {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Media query para telas maiores (desktop) */
+@media (min-width: 768px) {
+    #app-container {
+        flex-direction: row; /* Linha no desktop */
+        min-height: 700px;
+        /* Gap é tratado pela borda agora */
+    }
+
+    #editor-panel {
+        width: 50%;
+        height: 100%; /* Ocupa 100% da altura do container principal */
+        border-bottom: 0;
+
+    }
+
+    #preview-panel {
+        width: 50%;
+        height: 100%; /* Ocupa 100% da altura do container principal */
+        overflow: hidden; /* Garante que este painel não tenha barra de rolagem */
+    }
+
+    #preview-panel h1 {
+        display: none; /* Esconde o título no desktop */
+    }
+}

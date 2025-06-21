@@ -1,0 +1,168 @@
+
+.space-y-3 > *, .space-y-4 > * {
+    margin-top: 12px
+}
+.space-y-3 > *:first-child, .space-y-4 > *:first-child {
+    margin-top: 0;
+
+}
+.space-y-3, .space-y-4 {
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    max-width: 320px;
+}
+
+.headline {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: auto;
+}
+
+.headline b {
+    color: var(--primary-color);
+}
+
+.text-container h2 {
+    margin: 0;
+}
+
+/* Botões Específicos */
+#add-link-btn {
+    background-color: var(--secondary-color);
+}
+#add-link-btn:hover {
+    background-color: var(--primary-color);
+}
+#add-social-btn {
+    background-color: var(--secondary-color);
+}
+#add-social-btn:hover {
+    background-color: var(--primary-color);
+}
+.remove-link-btn, .remove-social-btn {
+    background-color: var(--secondary-color);
+
+}
+.remove-link-btn:hover, .remove-social-btn:hover {
+    background-color: var(--primary-color);
+}
+.remove-link-btn i, .remove-social-btn i {
+    font-size: 1rem;
+}
+
+/* Estilo para itens de link e ícone no editor */
+.link-item, .social-icon-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: end;
+    background-color: var(--gray-50);
+    padding: 12px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Inputs dentro dos itens de link/social */
+.link-text-input, .link-url-input, .social-url-input {
+    flex-grow: 1;
+
+}
+.social-platform-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--white);
+    flex-shrink: 0;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.social-icons-container {
+    width: 100px;
+}
+
+/* Estilo de rádio para seleção de estilo de ícone */
+.icon-style-options {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+.icon-style-options span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray-700);
+}
+.icon-style-options label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+.icon-style-options input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--gray-300);
+    border-radius: 50%;
+    margin-right: 8px;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+}
+.icon-style-options input[type="radio"]:checked {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+.icon-style-options input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--white);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Paleta de Cores */
+
+.color-picker-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    
+}
+@media (min-width: 640px) {
+    .color-picker-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.color-picker-grid > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.color-picker-grid label {
+    font-weight: normal;
+    font-size: 1rem;
+    color: var(--gray-700);
+    white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+    .space-y-3, .space-y-4 {
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    max-width: 900px;
+}
+}
+

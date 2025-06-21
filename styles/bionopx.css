@@ -1,0 +1,113 @@
+#nopx {
+    background-color: var(--color-black);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    font-family: var(--font-family-primary);
+
+}
+#nopx .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    margin: auto auto;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#nopx .pic img{
+    border-radius: 50%;
+    border: 3px solid var(--color-white);
+    box-shadow: var(--shadow);
+    margin-top: 3rem;
+}
+
+.profile .name {
+    font-size: 2rem;
+    font-weight: var(--font-weight-regular);
+}
+
+.profile .bio {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.text-container {
+    color: var(--color-white);
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+   
+}
+
+.links a {
+    padding: 1rem;
+    text-decoration: none;
+    border-radius: 12px;
+    min-width: 300px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-weight: var(--font-weight-semibold);
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.links a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.rounded-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.rounded-links .social {
+    padding: 1rem;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.rounded-links .social .icon {
+    color: var(--color-white);
+}
+
+.rounded-links .social:hover {
+    background-color: var(--color-primary);
+}
+
+
+@media (min-width: 768px) {
+    #nopx .container {
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        min-width: 800px;
+    }
+
+    .links a {
+        min-width: 700px;
+    }
+}
