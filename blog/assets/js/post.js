@@ -28,7 +28,7 @@ function renderPostContent(post) {
         </figure>
         <span class="card__tag">${post.category}</span>
         <div class="post-meta">
-            <span class="post-author">Por: Autor Fictício</span>
+            <span class="post-author">Por: ${post.author}</span>
             <span class="post-date">${formatDate(post.date)}</span>
             <button class="btn btn--icon share-btn" aria-label="Compartilhar post">
                 <img src="${BASE_PATH}/assets/img/placeholder/share-network.svg" alt="Ícone de compartilhamento"> </button>

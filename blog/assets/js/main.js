@@ -44,10 +44,40 @@ async function fetchPosts() {
  * @param {string} dateString - A data no formato "YYYY-MM-DD".
  * @returns {string} A data formatada.
  */
+// assets/js/main.js
+
+// ... (código existente) ...
+
+/**
+ * Formata uma data para o formato "Dia de Mês de Ano".
+ * Trata fusos horários para evitar o problema de "um dia a menos".
+ * @param {string} dateString - A data no formato "YYYY-MM-DD".
+ * @returns {string} A data formatada (ex: "23 de junho de 2025").
+ */
 function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('pt-BR', options);
+    // Divide a string "YYYY-MM-DD" em componentes numéricos.
+    const parts = dateString.split('-').map(Number);
+    const year = parts[0];
+    // Meses em JavaScript são baseados em zero (0 para Janeiro, 11 para Dezembro).
+    const month = parts[1] - 1; 
+    const day = parts[2];
+
+    // Cria um objeto Date usando os componentes (ano, mês, dia).
+    // Isso faz com que a data seja interpretada no fuso horário local.
+    const date = new Date(year, month, day);
+
+    // Opções de formatação para o local 'pt-BR' (Português do Brasil)
+    const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    };
+
+    // Retorna a data formatada
+    return date.toLocaleDateString('pt-BR', options);
 }
+
+// ... (restante do código) ...
 
 /**
  * Cria um elemento de card de post.
