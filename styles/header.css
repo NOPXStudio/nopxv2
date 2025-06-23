@@ -110,9 +110,9 @@ nav hr {
   header .container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     padding-block: 1rem;
+    max-width: 1400px;
   }
   
   .nav-links {
