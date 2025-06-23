@@ -1,0 +1,286 @@
+
+/* Header */
+.header {
+    padding: var(--spacing-sm) 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.header__container  {
+    margin: 0;
+    padding: 0 var(--spacing-md);
+    display: flex;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-sm);
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu[aria-expanded="true"] span:nth-child(1) {
+    opacity: 0;
+}
+.hamburger-menu[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu[aria-expanded="true"] span:nth-child(3) {
+    opacity: 0;
+}
+
+
+
+/* Mobile Navigation Sidebar */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Hidden by default */
+    width: 80%;
+    max-width: 300px;
+    height: 100%;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    padding: var(--spacing-xl);
+    box-shadow: var(--box-shadow-medium);
+    transition: left 0.3s ease-in-out;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav[aria-hidden="false"] {
+    left: 0;
+}
+
+.mobile-nav__close-btn {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    font-size: 2rem;
+    color: var(--background-color);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.mobile-nav__list {
+    margin-top: var(--spacing-xxl);
+    flex-grow: 1; /* Push back button to bottom */
+}
+
+.mobile-nav__list li {
+    margin-bottom: var(--spacing-lg);
+}
+
+.mobile-nav__list a {
+    color: var(--background-color);
+    font-size: 1.3em;
+    font-weight: var(--font-weight-bold);
+    display: block;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+}
+
+.mobile-nav__list a:hover,
+.mobile-nav__list a:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+}
+
+.mobile-nav__back-btn {
+    width: 100%;
+    margin-top: var(--spacing-xl);
+    text-align: center;
+}
+
+.mobile-nav__back-btn:hover {
+    text-decoration: none;
+    border: 1px solid var(--primary-color);
+}
+
+/* Main Content Layout */
+.main-content {
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-xxl);
+}
+
+.category-menu-desktop {
+    display: none; /* Hidden on mobile */
+}
+
+.featured-posts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xxl);
+}
+
+.main-card {
+    width: 100%;
+}
+
+.main-card__title {
+    font-size: 1.5em;
+}
+
+#side-cards-container {
+    display: none; /* Hidden on mobile */
+}
+
+.category-section {
+    margin-block: var(--spacing-xxl);
+}
+
+
+.category-section__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    padding: 0 var(--spacing-md);
+}
+
+.category-section__title {
+    font-size: 1.5em;
+    font-weight: var(--font-weight-bold);
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+.carousel-container {
+    position: relative;
+    padding: 0 var(--spacing-md); /* Padding for the container */
+}
+
+.carousel {
+    display: flex; /* Arrange cards horizontally */
+    gap: var(--spacing-md); /* Space between cards */
+    padding-bottom: var(--spacing-sm); /* Space for scrollbar */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.carousel .card {
+    flex-shrink: 0; /* Prevent cards from shrinking */
+    width: 80%; /* Each card takes 80% of the viewport width */
+    max-width: 300px; /* Max width for consistency */
+}
+
+.category-section__mobile-ver-tudo {
+    display: block;
+    text-align: right;
+    margin-top: var(--spacing-md);
+    margin-right: var(--spacing-md);
+}
+
+/* Post Page Specifics */
+.post-page .post-article {
+    padding: var(--spacing-md);
+}
+
+.post-page .post-title {
+    font-size: 2em;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.2;
+}
+
+.post-page .post-featured-image {
+    margin-bottom: var(--spacing-lg);
+}
+
+.post-page .post-featured-image img {
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-light);
+}
+
+.post-page .post-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: var(--spacing-xl);
+}
+
+.post-page .share-btn {
+    margin-left: auto; /* Pushes the share button to the right */
+}
+
+.post-page .post-content h2,
+.post-page .post-content h3,
+.post-page .post-content h4 {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--secondary-color);
+}
+
+.post-page .post-content p {
+    margin-bottom: var(--spacing-md);
+}
+
+.related-posts {
+    margin-top: var(--spacing-xxl);
+    padding: 0 var(--spacing-md);
+}
+
+.related-posts h2 {
+    font-size: 1.5em;
+    font-weight: var(--font-weight-bold);
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.carousel--related {
+    padding: 0; /* Remove extra padding for related posts carousel */
+}
+
+.carousel--related .card {
+    width: 90%; /* Adjust width for related posts */
+    max-width: 280px;
+}
+
+/* Category Page Specifics */
+.category-page .page-title {
+    font-size: 2em;
+    margin-bottom: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
+}
+
+.category-page .featured-posts {
+    margin-bottom: var(--spacing-xxl);
+    padding: 0 var(--spacing-md);
+}
+
+.category-page .post-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
+}
+
+.category-page .section-heading {
+    font-size: 1.5em;
+    font-weight: var(--font-weight-bold);
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-md);
+    margin-top: var(--spacing-xxl);
+    padding: 0 var(--spacing-md);
+}

@@ -1,0 +1,237 @@
+
+@media (min-width: 768px) {
+    .mobile-only {
+        display: none;
+    }
+
+    /* Header */
+    .header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 0;
+    column-gap: 20px;
+    }
+
+    .header__container  {
+    margin: 0;
+    padding: 0 var(--spacing-md);
+
+    }
+
+    .hamburger-menu,
+    .search-bar--mobile {
+        display: none;
+    }
+
+    .desktop-nav__back-btn {
+        margin-top: 0;
+    }
+
+    #back-button a {
+        display: block;
+    }
+
+    .main-nav-desktop {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; 
+        gap: var(--spacing-lg);
+        width: 100%; 
+    }
+
+    .search-bar--desktop {
+        display: flex;
+        max-width: 400px; 
+        margin-left: auto; 
+    }
+
+
+    .category-menu-desktop {
+        display: block;
+        background-color: var(--light-gray);
+        border-bottom: 1px solid var(--border-color);
+        padding: var(--spacing-md) 0;
+        margin-bottom: var(--spacing-xxl);
+    }
+
+    .category-menu-desktop__list {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-xl);
+        padding: 0 var(--spacing-md);
+    }
+
+    .category-menu-desktop__list a {
+        color: var(--secondary-color);
+        font-weight: var(--font-weight-bold);
+        padding: var(--spacing-sm);
+        transition: color 0.2s ease, background-color 0.2s ease;
+        border-radius: var(--border-radius-sm);
+    }
+
+    .category-menu-desktop__list a:hover {
+        color: var(--primary-color);
+        background-color: var(--background-color);
+        text-decoration: none;
+    }
+
+    /* Main Content Layout */
+    .main-content {
+        padding-top: 0;
+    }
+
+    .featured-posts {
+        display: grid;
+        grid-template-columns: 2fr 1fr; /* Main card (2/3) and side cards (1/3) */
+        gap: var(--spacing-xl);
+        margin-bottom: var(--spacing-xxl);
+        padding: 0 var(--spacing-xl); /* Add horizontal padding for desktop */
+        align-items: stretch;
+    }
+
+    .main-card a img {
+        height: 300px; /* Taller on desktop */
+    }
+
+    .main-card {
+        margin-top: 0px;
+    }
+
+    #side-cards-container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xl);
+    }
+
+    .card--small {
+        flex-grow: 1;
+    }
+
+    .card--small .card__image {
+        height: 150px; /* Smaller images for side cards */
+        object-fit: cover;
+    }
+
+    .category-section__header {
+        padding: 0 var(--spacing-xl); /* Match padding of featured-posts */
+    }
+
+    .carousel-container {
+        overflow-x: visible; /* Disable horizontal scrolling */
+        padding: 0 var(--spacing-xl); /* Match padding */
+    }
+
+    .carousel {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid for cards */
+        gap: var(--spacing-xl);
+    }
+
+    .carousel .card {
+        width: auto; /* Let grid handle width */
+        max-width: none; /* Remove max-width */
+    }
+
+    .category-section__mobile-ver-tudo {
+        display: none; /* Hidden on desktop */
+    }
+
+    /* Post Page Specifics */
+    .post-page .post-article {
+        max-width: 800px; /* Max width for content readability */
+        margin: 0 auto;
+        padding: var(--spacing-xxl) 0;
+    }
+
+    .post-page .post-title {
+        font-size: 2.5em;
+    }
+
+    .post-page .post-meta {
+        font-size: 1em;
+    }
+
+    .related-posts {
+        max-width: 1200px;
+        margin: var(--spacing-xxl) auto;
+        padding: 0 var(--spacing-xl);
+    }
+
+    .carousel--related {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 cards in a row for related posts */
+        gap: var(--spacing-xl);
+    }
+
+    .carousel--related .card {
+        width: auto;
+    }
+
+    /* Category Page Specifics */
+    .category-page .page-title {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: var(--spacing-xl);
+        padding: 0 var(--spacing-xl);
+    }
+
+    .category-page .featured-posts {
+        padding: 0 var(--spacing-xl);
+    }
+
+    .category-page .post-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grid for category posts */
+        gap: var(--spacing-xl);
+        padding: 0 var(--spacing-xl);
+    }
+
+    .category-page .section-heading {
+        padding: 0 var(--spacing-xl);
+    }
+
+    /* --- Footer Desktop Layout --- */
+    footer .footer__container {
+        flex-direction: row; /* Colunas lado a lado */
+        justify-content: space-between; /* Espaçamento uniforme entre as colunas */
+        align-items: flex-start; /* Alinha o topo das colunas */
+        padding: var(--spacing-xxl) var(--spacing-xl); /* Padding maior */
+        text-align: left;
+    }
+
+    footer .footer__col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+        text-align: left; /* Garante que o texto dentro das colunas se alinhe à esquerda */
+    }
+
+    .footer__col h4 {
+        align-self: flex-start;
+    }    
+
+    .footer__col--brand-social {
+        flex: 1.5; /* Dá mais espaço para a coluna do logo/redes sociais */
+        margin-right: var(--spacing-xxl); /* Espaçamento adicional */
+    }
+
+    .footer__social-links {
+        justify-content: center; /* Alinha os ícones das redes sociais à esquerda */
+    }
+
+  
+    .footer__col p,
+    .footer__col ul {
+        text-align: left;
+        align-self: flex-start;
+    }
+    /* Ajustes específicos de margem/largura para as outras colunas, se necessário */
+    .footer__col--site-links,
+    .footer__col--blog-categories,
+    .footer__col--cta {
+        flex: 1; /* Dão a mesma proporção de espaço */
+        text-align: left;
+    }
+}

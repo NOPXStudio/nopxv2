@@ -1,0 +1,461 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap');
+
+/* --- Design System (Root Variables) --- */
+:root {
+    /* Colors */
+    --primary-color: #7B2BBE;
+    --secondary-color: #2a2a2a;
+    --background-color: #ffffff;
+    --text-color: #2a2a2a;
+    --light-gray: #f5f5f5;
+    --border-color: #e0e0e0;
+
+    /* Fonts */
+    --font-family-base: 'Archivo', sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+
+    /* Border Radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+
+    /* Box Shadow */
+    --box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --box-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Base Styles --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-weight: var(--font-weight-regular);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+figcaption {
+   font-size: 0.8em; 
+   color: var(--text-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: var(--font-family-base);
+    font-size: inherit;
+    color: inherit;
+}
+
+/* Visually hide elements but keep them accessible for screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    font-weight: var(--font-weight-bold);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn--primary {
+    border: 1px soli var(--primary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn--primary:hover {
+    background-color: var(--primary-color);
+    border-color: none;
+    color: var(--background-color);
+}
+
+.btn--secondary {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn--secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.btn--text {
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: var(--spacing-sm);
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+}
+
+.btn--text:hover {
+    text-decoration: underline;
+}
+
+.btn--icon {
+    padding: var(--spacing-sm);
+    background-color: var(--light-gray);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; 
+    height: 40px; 
+  
+}
+
+.btn--icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.btn--icon:hover {
+    background-color: var(--border-color);
+}
+
+
+/* --- Header --- */
+.header {
+    background-color: var(--background-color);
+    padding: var(--spacing-md) var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--box-shadow-light);
+}
+
+
+
+.logo img {
+    height: 40px; 
+    width: auto;
+}
+
+/* --- Search Bar --- */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    flex-grow: 1; /* Allow to grow in mobile below navbar */
+}
+
+.search-bar input[type="search"] {
+    border: none;
+    background: transparent;
+    padding: var(--spacing-xs);
+    font-size: 1rem;
+    color: var(--text-color);
+    width: 100%;
+}
+
+.search-bar input[type="search"]::placeholder {
+    color: #888;
+}
+
+.search-bar button {
+    padding: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-sm);
+    transition: background-color 0.2s ease;
+}
+
+.search-bar button:hover {
+    background-color: var(--border-color);
+}
+
+.search-bar button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* --- Cards --- */
+
+.main-card__excerpt {
+    font-size: 0.95em;
+    color: #555; 
+    margin-bottom: var(--spacing-md);
+    line-height: 1.5; 
+
+    /* Propriedades para truncar o texto após 10 linhas */
+    display: -webkit-box; /* Para compatibilidade com Webkit (Chrome, Safari) */
+    -webkit-box-orient: vertical; /* Define a orientação da caixa para vertical */
+    overflow: hidden; /* Esconde o texto que ultrapassa o limite */
+    text-overflow: ellipsis; /* Adiciona "..." ao final do texto truncado */
+}
+.main-card {
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-light);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-medium);
+}
+
+.card a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    height: 100%; 
+}
+
+.card__image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: var(--border-radius-lg);
+    border-top-right-radius: var(--border-radius-lg);
+}
+
+.main-card__image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card__content {
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+}
+
+.card__tag {
+    display: inline-block;
+    color: var(--background-color);
+    padding: 2px 4px;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.8em;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+}
+
+.card__date {
+    font-size: 0.8em;
+}
+
+.card__title {
+    font-size: 1.2em;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+    flex-grow: 1;
+}
+
+.card .btn {
+    align-self: flex-start; 
+    margin-top: auto; 
+}
+
+.carousel {
+    padding: 10px;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--secondary-color); /* Fundo cinza escuro */
+    color: var(--background-color); /* Texto branco */
+    padding: var(--spacing-sm) 0; /* Espaçamento vertical */
+    margin-top: var(--spacing-xxl); /* Margem acima do footer */
+    font-size: 0.9em;
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column; /* Padrão mobile: empilhado */
+    gap: var(--spacing-xxl); /* Espaço entre as colunas */
+    padding: var(--spacing-md) var(--spacing-sm); /* Padding lateral e vertical interno */
+}
+
+
+.footer h4 { /* Para os títulos das colunas (Blog, Site, Fale Conosco) */
+    color: var(--background-color);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.footer a {
+    color: var(--background-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer a:hover {
+    color: #ed145b;
+}
+
+/* Colunas do Footer (Mobile: empilhadas, alinhadas ao centro) */
+.footer__col {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha o conteúdo de cada coluna ao centro */
+    text-align: center; /* Centraliza o texto */
+}
+
+.footer__logo img {
+    height: 60px; /* Tamanho do logo no footer */
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Redes Sociais */
+.footer__social-links {
+    display: flex;
+    gap: var(--spacing-md); /* Espaço entre os ícones das redes sociais */
+}
+
+
+
+.footer__social-links a {
+    background-color: var(--secondary-color); /* Cor de fundo igual ao footer */
+    border-radius: var(--border-radius-sm); /* Borda levemente arredondada, pode ser 0 se quiser totalmente quadrado */
+    width: 40px; /* Tamanho do quadrado do ícone */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer__social-links a:hover {
+    transform: scale(1.1); /* Aumenta o tamanho no hover */
+    box-shadow: var(--box-shadow-medium); /* Adiciona sombra no hover */
+    color: var(--background-color); /* Garante que o link em si não mude de cor */
+}
+
+.footer__social-links img {
+    width: 24px; /* Tamanho da imagem do ícone dentro do quadrado */
+    height: 24px;
+}
+
+/* Listas de Links (Categorias e Site) */
+.footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__list li {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* CTA */
+footer .footer__cta-btn {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 1em;
+    font-weight: var(--font-weight-bold);
+    background-color: #ed145b;
+    color: var(--background-color);
+    border-radius: var(--border-radius-sm);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: left;
+}
+
+footer .footer__cta-btn:hover {
+    background-color: var(--background-color);
+    color: #ed145b;
+    text-decoration: none;
+}
+
+.footer__copyright {
+    margin-top: var(--spacing-xl); /* Espaço acima do copyright no mobile */
+    font-size: 0.8em;
+}
+
+.footer__copyright a {
+    font-weight: var(--font-weight-bold);
+}
+
+/* Utility Classes */
+
+@media (max-width: 767px) {
+    .desktop-only {
+    display: none;
+}
+
+}
+@media (min-width: 768px) {
+    .mobile-only {
+    display: none;
+}
+}
