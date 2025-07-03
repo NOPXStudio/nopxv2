@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://nopx.com.br/</loc>
-    <lastmod>2025-06-21</lastmod>
-    <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://nopx.com.br/bionopx/bionopx.html</loc>
-    <lastmod>2025-06-21</lastmod>
-    <priority>0.8</priority>
+    <loc>https://nopx.com.br/404.html</loc>
   </url>
+
   <url>
-    <loc>https://nopx.com.br/bionopx/index.html</loc>
-    <lastmod>2025-06-21</lastmod>
-    <priority>0.8</priority>
+    <loc>https://nopx.com.br/robots.txt</loc>
   </url>
+
   <url>
-    <loc>https://nopx.com.br/bionopx/landingpage.html</loc>
-    <lastmod>2025-06-21</lastmod>
-    <priority>0.8</priority>
+    <loc>https://nopx.com.br/sitemap.xml</loc>
   </url>
+
 </urlset>
