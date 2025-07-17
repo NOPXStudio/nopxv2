@@ -93,7 +93,7 @@ nav hr {
   transition: color 0.2s ease, scale 0.2s ease;
 }
 
-@media (min-width: 1441px) {
+@media (min-width: 1080px) {
   #menuToggle {
     display: none;
   }
