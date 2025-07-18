@@ -113,6 +113,10 @@ nav hr {
     display: block;
   }
 
+  header #nav-wpp {
+    display: none;
+  }
+
   header .container {
     display: flex;
     flex-direction: row;
