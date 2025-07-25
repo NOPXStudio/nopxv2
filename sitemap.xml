@@ -3,18 +3,8 @@
 
   <url>
     <loc>https://nopx.com.br/</loc>
-  </url>
-
-  <url>
-    <loc>https://nopx.com.br/404.html</loc>
-  </url>
-
-  <url>
-    <loc>https://nopx.com.br/robots.txt</loc>
-  </url>
-
-  <url>
-    <loc>https://nopx.com.br/sitemap.xml</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
 
 </urlset>
